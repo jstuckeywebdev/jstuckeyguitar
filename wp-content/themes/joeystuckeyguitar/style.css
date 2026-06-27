@@ -1,0 +1,702 @@
+/*
+Theme Name: Guitar Lesson and Performance Site
+Author: Joey Stuckey
+Description: A custom ACF-block-based theme for guitar performance and lessons
+Version: 1.0
+Text Domain: guitar-portfolio
+*/
+
+/* Add your global CSS resets or Tailwind imports here */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--wp--preset--color--background);
+
+    background-image: 
+        linear-gradient(
+            var(--wp--preset--color--background-overlay), 
+            var(--wp--preset--color--background-overlay)
+        ),
+        url("assets/img/Texturelabs_Paper_127M.jpg");
+
+    background-size: repeat;
+    background-position: top;
+}
+
+.entry-content * {
+    box-sizing: border-box !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--wp--preset--font-family--heading);
+    color: var(--wp--preset--color--primary);
+    letter-spacing: 3px;
+}
+
+p, li, a, .forminator-label{
+    font-family: var(--wp--preset--font-family--body-sans);
+    color: var(--wp--preset--color--primary);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+
+.btn, .wp-element-button{
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+    width: fit-content;
+    font-family: var(--wp--preset--font-family--body-sans);
+    border-radius: 3px;
+
+    &:hover {
+        background-color: var(--wp--preset--color--background);
+        background-image: 
+            linear-gradient(
+                var(--wp--preset--color--background-overlay), 
+                var(--wp--preset--color--background-overlay)
+            ),
+            url("assets/img/Texturelabs_Paper_127M.jpg");
+
+            background-size: cover;
+            background-position: center;
+        color: var(--wp--preset--color--primary);
+    }
+}
+
+.btn-primary, .wp-element-button {
+    color: var(--wp--preset--color--background);
+    background: var(--wp--preset--color--accent);
+    background-image: 
+        linear-gradient(
+            var(--wp--preset--color--accent-overlay), 
+            var(--wp--preset--color--accent-overlay)
+        ),
+        url("assets/img/Texturelabs_Wood_120L.jpg");
+
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--wp--preset--color--accent);
+    background-origin: border-box;
+
+    &:hover {
+        border-color: var(--wp--preset--color--background);
+    }
+}
+
+.btn-secondary, .btn-secondary a {
+    color: var(--wp--preset--color--background);
+    background: transparent;
+    border: 3px solid var(--wp--preset--color--background);
+}
+
+.bg-parchment .btn-secondary, .bg-parchment .btn-primary {
+    border: none;
+}
+
+.bg-parchment .btn-secondary a, .bg-parchment .btn-secondary {
+    border-color: var(--wp--preset--color--accent);
+    color: var(--wp--preset--color--accent);
+
+    &:hover {
+        color: var(--wp--preset--color--background);
+        background: var(--wp--preset--color--accent);
+        background-image: 
+            linear-gradient(
+                var(--wp--preset--color--accent-overlay), 
+                var(--wp--preset--color--accent-overlay)
+            ),
+            url("assets/img/Texturelabs_Wood_120L.jpg");
+    }
+}
+
+.wp-block-buttons .wp-block-button {
+    border-radius: 3px;
+}
+
+.full-width-row {
+    width: 100%;
+}
+
+.wp-block-group {
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.site-header .main-nav-list {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+
+    li {
+        border: 5px solid transparent;
+
+        :hover {
+            border-bottom: 3px solid var(--wp--preset--color--accent);
+        }
+    }
+    
+    li a {
+        color: var(--wp--preset--color--primary);
+        font-family: var(--wp--preset--font-family--body-sans);
+        text-decoration: none;
+        font-size: 1.25rem;
+    }
+}
+
+.current_page_item a {
+    border-bottom: 3px solid var(--wp--preset--color--accent);
+}
+
+.main-nav-list .sub-menu {
+    position: absolute;
+    display: none;
+    background-color: var(--wp--preset--color--background);
+
+    background-image: 
+        linear-gradient(
+            var(--wp--preset--color--background-overlay), 
+            var(--wp--preset--color--background-overlay)
+        ),
+        url("assets/img/Texturelabs_Paper_127M.jpg");
+
+    background-size: repeat;
+    background-position: center;
+    padding: 20px;
+    border: 1px solid var(--wp--preset--color--background); 
+    list-style: none;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+}
+
+.main-nav-list li:hover > .sub-menu {
+    display: block;
+    border: 1px solid var(--wp--preset--color--background); 
+}
+
+.sub-menu li {
+    margin-bottom: 10px;
+    border: none !important; 
+}
+
+.sub-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.main-nav-list li {
+    position: relative;
+}
+    
+#header-logo {
+    max-width: 250px;
+}
+
+#home-hero {
+    background-color: var(--wp--preset--color--primary);
+
+    background-image: 
+        linear-gradient(
+            var(--wp--preset--color--primary-overlay), 
+            var(--wp--preset--color--primary-overlay)
+        ),
+        url("assets/img/Texturelabs_Wood_120L.jpg");
+
+    background-size: cover;
+    background-position: center;
+    
+    padding: 60px 0;
+}
+
+#home-hero-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* 60% video, 40% text */
+    gap: 40px;
+    align-items: center;
+    padding: 0 30px;
+    h1 {
+        color: var(--wp--preset--color--background);
+        font-size: 40px;
+    }
+
+    p {
+        color: var(--wp--preset--color--background);
+        font-size: 20px;
+    }
+
+    .hero-btns {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+.video-preview {
+    position: relative;
+}
+
+.video-preview img {
+    width: 100%;
+    border: 1px solid var(--wp--preset--color--background);
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(217, 119, 6, 0.15);
+}
+
+.wp-block-image img {   
+    box-shadow: 0 10px 30px var(--wp--preset--color--primary-overlay);
+    border-radius: 5px;
+}
+
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    color: var(--wp--preset--color--background);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        color: var(--wp--preset--color--highlight);
+    }
+}
+
+.plyr__control--overlaid {
+    background-color: var(--wp--preset--color--accent);
+}
+
+.plyr__controls__item:hover{
+    color: var(--wp--preset--color--accent);
+}
+
+.hero-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wp-block-group, .wp-block-row {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.wp-block-group > *, .wp-block-row > * {
+    max-width: 1200px;
+}
+
+.bg-sepia-wood {
+    background-color: var(--wp--preset--color--accent);
+
+    background-image: 
+        linear-gradient(
+            var(--wp--preset--color--accent-overlay), 
+            var(--wp--preset--color--accent-overlay)
+        ),
+        url("assets/img/Texturelabs_Wood_120L.jpg");
+
+    background-size: cover;
+    background-position: top;
+
+    p,li,strong,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+        color: var(--wp--preset--color--background);
+    }
+}
+
+.bg-dark-wood {
+    background-color: var(--wp--preset--color--primary);
+
+    background-image: 
+        linear-gradient(
+            var(--wp--preset--color--primary-overlay), 
+            var(--wp--preset--color--primary-overlay)
+        ),
+        url("assets/img/Texturelabs_Wood_120L.jpg");
+
+    background-size: cover;
+    background-position: top;
+    
+    p,strong,li,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6  {
+        color: var(--wp--preset--color--background);
+    }
+}
+
+.bg-parchment {
+    background-color: var(--wp--preset--color--background);
+    background-image: 
+        linear-gradient(
+            var(--wp--preset--color--background-overlay), 
+            var(--wp--preset--color--background-overlay)
+        ),
+        url("assets/img/Texturelabs_Paper_127M.jpg");
+    background-size: cover;
+    background-position: top;
+
+    p,strong,li,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+        color: var(--wp--preset--color--primary);
+    }
+}
+
+.card {
+    box-shadow: 0 10px 30px var(--wp--preset--color--primary-overlay);
+    border: 3px solid var(--wp--preset--color--background);
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+
+    flex: 1;                /* Forces the card to grow to the slide height */
+    align-items: stretch;   /* Changed from 'center' to allow full width/height */
+    width: 100%;
+}
+
+#testimonials-section {
+    padding: 60px 0;
+    text-align: center;
+
+}
+
+.testimonial-title {
+    color: var(--wp--preset--color--background);
+    margin-bottom: 30px
+}
+
+.testimonial-slider .swiper-slide {
+    display: flex !important;
+    height: auto !important; /* Overrides Swiper's internal fixed height */
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--wp--preset--color--accent) !important;
+}
+
+.card-container {
+    gap: 60px;
+}
+
+.testimonial-card {
+    .h6 {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+}
+
+.review-btn {
+    margin-top: 30px;
+}
+
+.video-card {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.video-archive {
+    padding: 30px 0;
+
+    h1 {
+        color: var(--wp--preset--color--background);
+        margin-bottom: 30px;
+    }
+}
+
+.video-grid {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 60px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--wp--preset--color--accent);
+}
+
+.sub-page-hero {
+    padding: 90px 0;
+    text-align: center;
+    
+    h1{
+        color: var(--wp--preset--color--background);
+        font-size: 90px;
+    }
+    
+    p {
+        color: var(--wp--preset--color--background);
+        font-size: 30px;
+    }
+}
+
+.description-wrapper {
+    max-height: 4.5em; /* Shows about 3 lines of text */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.description-wrapper.is-open {
+    max-height: 1000px;
+}
+
+.read-more-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--wp--preset--color--accent); /* Your Varnish Gold */
+    font-family: var(--wp--preset--font-family--body-sans);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: auto;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    gap: 15px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    
+    a {
+        text-decoration: none;
+        /* color: var(--wp--preset--color--primary); */
+        font-size: 16px;
+
+    }
+}
+
+.footer-navigation ul {
+    display: flex;
+    list-style-type: none;
+    gap: 15px;
+    
+    a{
+        text-decoration: none;
+        color: var(--wp--preset--color--primary);
+
+        &:hover {
+            border-bottom: 3px solid var(--wp--preset--color--accent);
+        }
+    }
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    a svg{
+    fill: var(--wp--preset--color--primary);
+    width: 30px;
+
+        &:hover {
+            fill: var(--wp--preset--color--accent);
+        }
+    }
+}
+
+.copyright {
+    font-size: 14px;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+
+    .container .wp-block-group > *{
+        padding: 0 30px;
+    }
+
+    #home-hero-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-container {
+        padding: 0 30px;
+    }
+
+        .menu-toggle { 
+            display: flex; 
+    }
+
+    .main-navigation {
+        position: fixed;
+        top: 0;
+        right: -500px; /* Hidden off-screen */
+        width: 200px;
+        height: 100vh;
+        background: var(--wp--preset--color--background); /* Your parchment texture */
+        background-image: 
+            linear-gradient(
+                var(--wp--preset--color--background-overlay), 
+                var(--wp--preset--color--background-overlay)
+            ),
+            url("assets/img/Texturelabs_Paper_127M.jpg");
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+        padding: 100px 40px;
+    }
+
+    .main-navigation.is-open {
+        right: 0;
+    }
+
+    .site-header .main-nav-list {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    .menu-toggle.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .main-nav-list .sub-menu {
+        display: block;
+        position: static;
+        background: none;
+        box-shadow: none;
+        border: none;
+    }
+
+}
+
+/* FAQ Section */ 
+.schema-faq-section {
+    border: 1px solid var(--wp--preset--color--primary);
+    margin-top: 5px;
+}
+
+/* Style the Question to look clickable */
+.schema-faq-question {
+    padding: 15px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 0 !important;
+}
+
+/* Add a simple + icon using pseudo-elements */
+.schema-faq-question::after {
+    content: '+';
+    float: right;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate the + when active */
+.schema-faq-question.is-active::after {
+    transform: rotate(45deg);
+}
+
+.schema-faq-question.is-active {
+    border-bottom: 1px solid var(--wp--preset--color--primary);
+}
+
+/* Hide the Answer by default */
+.schema-faq-answer {
+    display: none;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 25px;
+    }
+    p, a {
+        font-size: 18px;
+    }   
+
+    .sub-page-hero{
+        h1 {
+            font-size: 60px;
+        }
+        p, a {
+            font-size: 30px;
+        }   
+    } 
+
+    .video-grid {
+    grid-template-columns: repeat(1, 1fr); 
+    }
+
+    .footer-navigation {
+        max-width: 300px;
+    }
+
+    .footer-navigation .main-nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+     .reverse-column-on-mobile {
+        flex-direction: column-reverse;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+}

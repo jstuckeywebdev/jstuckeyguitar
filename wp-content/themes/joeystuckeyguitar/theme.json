@@ -1,0 +1,57 @@
+{
+    "version": 2,
+    "settings": {
+        "appearanceTools": true,
+        "layout": {
+            "contentSize": "1200px",
+            "wideSize": "1400px"
+        },
+        "color": {
+            "palette": [
+                { "name": "Background", "slug": "background", "color": "#FCEED1" },
+                { "name": "Background Overlay", "slug": "background-overlay", "color": "rgba(252, 238, 209, 0.75)" },
+                { "name": "Primary", "slug": "primary", "color": "#2A251F" },
+                { "name": "Primary Overlay", "slug": "primary-overlay", "color": "rgba(42, 37, 31, 0.9)" },
+                { "name": "Accent", "slug": "accent", "color": "#8A4029" },
+                { "name": "Accent Overlay", "slug": "accent-overlay", "color": "rgba(138, 64, 41, 0.85)" },
+                { "name": "Highlight", "slug": "highlight", "color": "#D97706" }
+            ]
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "'EB Garamond', serif",
+                    "name": "Heading (EB Garamond)",
+                    "slug": "heading"
+                },
+                {
+                    "fontFamily": "'Libre Baskerville', serif",
+                    "name": "Body Serif (Baskerville)",
+                    "slug": "body-serif"
+                },
+                {
+                    "fontFamily": "'Quattrocento Sans', sans-serif",
+                    "name": "Body Sans (Quattrocento)",
+                    "slug": "body-sans"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--body-serif)"
+        },
+        "elements": {
+            "heading": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--heading)"
+                }
+            },
+            "link": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--body-sans)"
+                }
+            }
+        }
+    }
+}
